@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/fragmentPrincipal">
+
+    <fragment
+        android:id="@+id/fragmentPrincipal"
+        android:name="com.example.planificateurbudgetaire.FragmentPrincipal"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" />
+    <fragment
+        android:id="@+id/fragmentAjoutRevenu"
+        android:name="com.example.planificateurbudgetaire.FragmentAjoutRevenu"
+        android:label="fragment_ajout_revenu"
+        tools:layout="@layout/fragment_ajout_revenu" />
+    <fragment
+        android:id="@+id/fragmentAjoutDepense"
+        android:name="com.example.planificateurbudgetaire.FragmentAjoutDepense"
+        android:label="fragment_ajout_depense"
+        tools:layout="@layout/fragment_ajout_depense" />
+</navigation>
