@@ -9,15 +9,30 @@
         android:id="@+id/fragmentPrincipal"
         android:name="com.example.planificateurbudgetaire.FragmentPrincipal"
         android:label="fragment_principal"
-        tools:layout="@layout/fragment_principal" />
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_fragmentPrincipal_to_fragmentAjoutRevenu"
+            app:destination="@id/fragmentAjoutRevenu" />
+        <action
+            android:id="@+id/action_fragmentPrincipal_to_fragmentAjoutDepense"
+            app:destination="@id/fragmentAjoutDepense" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentAjoutRevenu"
         android:name="com.example.planificateurbudgetaire.FragmentAjoutRevenu"
         android:label="fragment_ajout_revenu"
-        tools:layout="@layout/fragment_ajout_revenu" />
+        tools:layout="@layout/fragment_ajout_revenu" >
+        <action
+            android:id="@+id/action_fragmentAjoutRevenu_to_fragmentPrincipal"
+            app:destination="@id/fragmentPrincipal" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentAjoutDepense"
         android:name="com.example.planificateurbudgetaire.FragmentAjoutDepense"
         android:label="fragment_ajout_depense"
-        tools:layout="@layout/fragment_ajout_depense" />
+        tools:layout="@layout/fragment_ajout_depense" >
+        <action
+            android:id="@+id/action_fragmentAjoutDepense_to_fragmentPrincipal"
+            app:destination="@id/fragmentPrincipal" />
+    </fragment>
 </navigation>
