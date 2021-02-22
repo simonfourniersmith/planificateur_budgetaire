@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_principal" >
         <action
             android:id="@+id/navigateToFragmentAjoutRevenu"
-            app:destination="@id/fragmentAjoutRevenu" />
+            app:destination="@id/fragmentAjoutRevenu"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/navigateToFragmentAjoutDepense"
-            app:destination="@id/fragmentAjoutDepense" />
+            app:destination="@id/fragmentAjoutDepense"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAjoutRevenu"
@@ -24,7 +28,9 @@
         tools:layout="@layout/fragment_ajout_revenu" >
         <action
             android:id="@+id/navigateToFragmentPrincipal"
-            app:destination="@id/fragmentPrincipal" />
+            app:destination="@id/fragmentPrincipal"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAjoutDepense"
@@ -33,6 +39,8 @@
         tools:layout="@layout/fragment_ajout_depense" >
         <action
             android:id="@+id/navigateToFragmentPrincipal"
-            app:destination="@id/fragmentPrincipal" />
+            app:destination="@id/fragmentPrincipal"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 </navigation>
