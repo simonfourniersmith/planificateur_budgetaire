@@ -11,10 +11,10 @@
         android:label="fragment_principal"
         tools:layout="@layout/fragment_principal" >
         <action
-            android:id="@+id/action_fragmentPrincipal_to_fragmentAjoutRevenu"
+            android:id="@+id/navigateToFragmentAjoutRevenu"
             app:destination="@id/fragmentAjoutRevenu" />
         <action
-            android:id="@+id/action_fragmentPrincipal_to_fragmentAjoutDepense"
+            android:id="@+id/navigateToFragmentAjoutDepense"
             app:destination="@id/fragmentAjoutDepense" />
     </fragment>
     <fragment
@@ -23,7 +23,7 @@
         android:label="fragment_ajout_revenu"
         tools:layout="@layout/fragment_ajout_revenu" >
         <action
-            android:id="@+id/action_fragmentAjoutRevenu_to_fragmentPrincipal"
+            android:id="@+id/navigateToFragmentPrincipal"
             app:destination="@id/fragmentPrincipal" />
     </fragment>
     <fragment
@@ -32,7 +32,7 @@
         android:label="fragment_ajout_depense"
         tools:layout="@layout/fragment_ajout_depense" >
         <action
-            android:id="@+id/action_fragmentAjoutDepense_to_fragmentPrincipal"
+            android:id="@+id/navigateToFragmentPrincipal"
             app:destination="@id/fragmentPrincipal" />
     </fragment>
 </navigation>
