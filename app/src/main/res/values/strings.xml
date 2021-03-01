@@ -13,6 +13,7 @@
     <string name="revenus">Revenus</string>
     <string name="depenses">Dépenses</string>
     <string name="argent_disponible">Argent disponible</string>
+    <string name="budgetly">Budgetly</string>
     <string-array name="liste_categories_revenus">
         <item>Salaire</item>
         <item>Bourse</item>
@@ -26,7 +27,7 @@
         <item>Restaurant</item>
         <item>Médicaments</item>
         <item>Cinéma</item>
-        <item>Assurance automobile</item>
+        <item>Assurance auto</item>
     </string-array>
     <string-array name="liste_frequences">
         <item>Hebdomadaire</item>
