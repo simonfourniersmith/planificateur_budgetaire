@@ -10,12 +10,23 @@
     <string name="frequence">Fréquence</string>
     <string name="somme">Somme</string>
     <string name="dollar_sign">$</string>
+    <string name="revenus">Revenus</string>
+    <string name="depenses">Dépenses</string>
+    <string name="argent_disponible">Argent disponible</string>
     <string-array name="liste_categories_revenus">
         <item>Salaire</item>
         <item>Bourse</item>
         <item>Prime</item>
         <item>Pension de retraite</item>
         <item>Cadeau</item>
+    </string-array>
+    <string-array name="liste_categories_depenses">
+        <item>Essence</item>
+        <item>Épicerie</item>
+        <item>Restaurant</item>
+        <item>Médicaments</item>
+        <item>Cinéma</item>
+        <item>Assurance automobile</item>
     </string-array>
     <string-array name="liste_frequences">
         <item>Hebdomadaire</item>

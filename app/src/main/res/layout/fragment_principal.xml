@@ -7,7 +7,127 @@
     tools:context=".FragmentPrincipal">
 
 
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/label_revenus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:padding="10dp"
+                android:text="@string/revenus"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/revenus_totaux"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/label_dollar_sign_revenus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:padding="10dp"
+                android:text="@string/dollar_sign"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/label_depenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:padding="10dp"
+                android:text="@string/depenses"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/depenses_totales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/label_dollar_sign_depenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:padding="10dp"
+                android:text="@string/dollar_sign"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_column="1"
+                android:background="@android:color/black" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/label_somme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:padding="10dp"
+                android:text="@string/argent_disponible"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/argent_disponible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/label_dollar_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:padding="10dp"
+                android:text="@string/dollar_sign"
+                android:textSize="25sp" />
+        </TableRow>
+    </TableLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
@@ -27,10 +147,10 @@
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:paddingHorizontal="16dp"
             android:backgroundTint="@color/Black"
-            android:textColor="@color/White"
-            android:text="@string/revenu" />
+            android:paddingHorizontal="16dp"
+            android:text="@string/revenu"
+            android:textColor="@color/White" />
 
         <Button
             android:id="@+id/bouton_depense"
@@ -39,9 +159,10 @@
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:paddingHorizontal="16dp"
             android:backgroundTint="@color/Black"
-            android:textColor="@color/White"
-            android:text="@string/depense" />
+            android:paddingHorizontal="16dp"
+            android:text="@string/depense"
+            android:textColor="@color/White" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
