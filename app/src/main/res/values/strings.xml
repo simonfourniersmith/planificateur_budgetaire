@@ -18,7 +18,6 @@
         <item>Salaire</item>
         <item>Bourse</item>
         <item>Prime</item>
-        <item>Pension de retraite</item>
         <item>Cadeau</item>
     </string-array>
     <string-array name="liste_categories_depenses">
