@@ -10,6 +10,20 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.io.Console
 import kotlin.math.log
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Revenu(
+    val categorie: String,
+    val frequence: String,
+    val somme: Float
+)
+
+data class Depense(
+    val categorie: String,
+    val frequence: String,
+    val somme: Float
+)
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,19 +32,6 @@ class MainActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_main)
-
-        val bouton_ajouter = findViewById<Button>(R.id.bouton_ajouter)
-        val spinner_categorie = findViewById<Spinner>(R.id.spinner_categorie)
-
-        val sommeTIET = findViewById<TextInputEditText>(R.id.input_somme)
-        sommeTIET.text.toString().toFloat()
-        val liste = arrayListOf<Float>()
-        val spin = findViewById<Spinner>(R.id.spinner_categorie)
-        val test = spin.onItemSelectedListener.toString()
-
-        bouton_ajouter.setOnClickListener {
-            
-        }
 
     }
 }

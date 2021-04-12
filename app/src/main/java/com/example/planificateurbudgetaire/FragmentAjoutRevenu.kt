@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Spinner
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_ajout_revenu.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,6 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentAjoutRevenu : Fragment() {
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,8 +42,15 @@ class FragmentAjoutRevenu : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ajout_revenu, container, false)
 
+        view.bouton_ajouter.setOnClickListener {
+            val categorie = view.spinner_categorie.selectedItem.toString()
+            val frequence = view.spinner_frequence.selectedItem.toString()
+            val somme = view.input_somme.text.toString().toFloat()
+            val revenu = Revenu(categorie, frequence, somme)
+        }
+
         view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
-        view.bouton_ajouter.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
+        //view.bouton_ajouter.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
 
         return view
     }
