@@ -40,6 +40,7 @@ class FragmentAjoutDepense : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ajout_depense, container, false)
 
+        // Lorsque le bouton 'ajouter' est appuyé, les renseignements sur la dépense sont envoyés dans MainActivity et on retourne à l'écran d'accueil.
         view.bouton_ajouter.setOnClickListener {
             val categorie = view.spinner_categorie.selectedItem.toString()
             val frequence = view.spinner_frequence.selectedItem.toString()
@@ -51,6 +52,7 @@ class FragmentAjoutDepense : Fragment() {
             Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
         }
 
+        // Retour à l'écran d'accueil.
         view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
         return view
     }

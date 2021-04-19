@@ -37,5 +37,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-// Faire une fonction pour envoyer des données.

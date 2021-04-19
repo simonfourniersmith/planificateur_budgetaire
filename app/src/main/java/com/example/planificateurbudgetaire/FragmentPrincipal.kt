@@ -40,23 +40,39 @@ class FragmentPrincipal : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        // Récupère la liste des revenus, calcule la somme totale et l'affiche.
         val liste_revenus = (activity as MainActivity?)!!.liste_revenus
         var somme_totale_revenus = 0.0
         liste_revenus.forEach {
-            somme_totale_revenus += it.somme
+            if (it.frequence == "Hebdomadaire") {
+                somme_totale_revenus += it.somme * 4
+            }
+            else if (it.frequence == "Bimensuel") {
+                somme_totale_revenus += it.somme * 2
+            }
+            else {
+                somme_totale_revenus += it.somme
+            }
         }
-
         revenus_totaux.setText(somme_totale_revenus.toString())
 
+        // Récupère la liste des dépenses, calcule la somme totale et l'affiche.
         val liste_depenses = (activity as MainActivity?)!!.liste_depenses
         var somme_totale_depenses = 0.0
         liste_depenses.forEach {
-            somme_totale_depenses += it.somme
+            if (it.frequence == "Hebdomadaire") {
+                somme_totale_depenses += it.somme * 4
+            }
+            else if (it.frequence == "Bimensuel") {
+                somme_totale_depenses += it.somme * 2
+            }
+            else {
+                somme_totale_depenses += it.somme
+            }
         }
-        //Log.w("salut", somme_totale_depenses.toString())
-
         depenses_totales.setText(somme_totale_depenses.toString())
 
+        // Calcule les revenus moins les dépenses et affiche l'argent disponible.
         val somme_restante = somme_totale_revenus - somme_totale_depenses
         argent_disponible.setText(somme_restante.toString())
     }

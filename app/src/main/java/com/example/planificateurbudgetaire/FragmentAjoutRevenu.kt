@@ -21,7 +21,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentAjoutRevenu : Fragment() {
-
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,6 +40,7 @@ class FragmentAjoutRevenu : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ajout_revenu, container, false)
 
+        // Lorsque le bouton 'ajouter' est appuyé, les renseignements sur le revenu sont envoyés dans MainActivity et on retourne à l'écran d'accueil.
         view.bouton_ajouter.setOnClickListener {
             val categorie = view.spinner_categorie.selectedItem.toString()
             val frequence = view.spinner_frequence.selectedItem.toString()
@@ -52,6 +52,7 @@ class FragmentAjoutRevenu : Fragment() {
             Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
         }
 
+        // Retour à l'écran d'accueil.
         view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
         return view
     }
