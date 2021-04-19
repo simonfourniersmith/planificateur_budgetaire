@@ -47,7 +47,7 @@ class FragmentAjoutRevenu : Fragment() {
             val somme = view.input_somme.text.toString().toFloat()
             val revenu = Revenu(categorie, frequence, somme)
 
-            (activity as MainActivity?)!!.test()
+            (activity as MainActivity?)!!.addRevenu(revenu)
 
             Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
         }

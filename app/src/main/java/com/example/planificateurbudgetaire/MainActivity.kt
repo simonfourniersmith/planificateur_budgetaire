@@ -15,23 +15,17 @@ import java.io.Console
 import kotlin.math.log
 import kotlinx.serialization.Serializable
 
-/*@Serializable
-data class Revenu(
-    val categorie: String,
-    val frequence: String,
-    val somme: Float
-)
-
-data class Depense(
-    val categorie: String,
-    val frequence: String,
-    val somme: Float
-)*/
-
 class MainActivity : AppCompatActivity() {
 
-    public fun test() {
-        Log.w("test", "hello")
+    val liste_revenus = mutableListOf<Revenu>()
+    val liste_depenses = mutableListOf<Depense>()
+
+    public fun addRevenu(revenu: Revenu) {
+        liste_revenus.add(revenu)
+    }
+
+    public fun addDepense(depense: Depense) {
+        liste_depenses.add(depense)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +34,7 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_main)
 
-        val liste_revenus = listOf<Revenu>()
-        val liste_depenses = listOf<Depense>()
+
     }
 }
 

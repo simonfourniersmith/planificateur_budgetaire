@@ -1,12 +1,15 @@
 package com.example.planificateurbudgetaire
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.main.fragment_principal.*
 import kotlinx.android.synthetic.main.fragment_principal.view.*
 import java.util.*
 
@@ -37,6 +40,25 @@ class FragmentPrincipal : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        val liste_revenus = (activity as MainActivity?)!!.liste_revenus
+        var somme_totale_revenus = 0.0
+        liste_revenus.forEach {
+            somme_totale_revenus += it.somme
+        }
+
+        revenus_totaux.setText(somme_totale_revenus.toString())
+
+        val liste_depenses = (activity as MainActivity?)!!.liste_depenses
+        var somme_totale_depenses = 0.0
+        liste_depenses.forEach {
+            somme_totale_depenses += it.somme
+        }
+        //Log.w("salut", somme_totale_depenses.toString())
+
+        depenses_totales.setText(somme_totale_depenses.toString())
+
+        val somme_restante = somme_totale_revenus - somme_totale_depenses
+        argent_disponible.setText(somme_restante.toString())
     }
 
     override fun onCreateView(

@@ -46,7 +46,7 @@ class FragmentAjoutDepense : Fragment() {
             val somme = view.input_somme.text.toString().toFloat()
             val depense = Depense(categorie, frequence, somme)
 
-            (activity as MainActivity?)!!.test()
+            (activity as MainActivity?)!!.addDepense(depense)
 
             Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
         }
