@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.*
+import androidx.navigation.fragment.findNavController
+import com.example.planificateurbudgetaire.model.Revenu
 import kotlinx.android.synthetic.main.fragment_ajout_revenu.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,11 +46,13 @@ class FragmentAjoutRevenu : Fragment() {
             val frequence = view.spinner_frequence.selectedItem.toString()
             val somme = view.input_somme.text.toString().toFloat()
             val revenu = Revenu(categorie, frequence, somme)
+
+            (activity as MainActivity?)!!.test()
+
+            Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
         }
 
         view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
-        //view.bouton_ajouter.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
-
         return view
     }
 

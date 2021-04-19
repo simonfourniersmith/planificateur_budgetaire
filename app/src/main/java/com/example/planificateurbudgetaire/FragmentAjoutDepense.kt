@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import com.example.planificateurbudgetaire.model.Depense
 import kotlinx.android.synthetic.main.fragment_ajout_depense.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,9 +40,18 @@ class FragmentAjoutDepense : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ajout_depense, container, false)
 
-        view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
-        view.bouton_ajouter.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
+        view.bouton_ajouter.setOnClickListener {
+            val categorie = view.spinner_categorie.selectedItem.toString()
+            val frequence = view.spinner_frequence.selectedItem.toString()
+            val somme = view.input_somme.text.toString().toFloat()
+            val depense = Depense(categorie, frequence, somme)
 
+            (activity as MainActivity?)!!.test()
+
+            Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal)
+        }
+
+        view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
         return view
     }
 
