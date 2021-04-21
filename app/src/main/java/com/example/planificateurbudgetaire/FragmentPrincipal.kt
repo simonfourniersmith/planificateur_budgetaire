@@ -1,17 +1,16 @@
 package com.example.planificateurbudgetaire
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_principal.*
 import kotlinx.android.synthetic.main.fragment_principal.view.*
-import java.util.*
+import java.math.RoundingMode
+import java.math.BigDecimal
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,7 +53,7 @@ class FragmentPrincipal : Fragment() {
                 somme_totale_revenus += it.somme
             }
         }
-        revenus_totaux.setText(somme_totale_revenus.toString())
+        revenus_totaux.setText(BigDecimal(somme_totale_revenus).setScale(2, RoundingMode.HALF_EVEN).toString())
 
         // Récupère la liste des dépenses, calcule la somme totale et l'affiche.
         val liste_depenses = (activity as MainActivity?)!!.liste_depenses
@@ -70,11 +69,11 @@ class FragmentPrincipal : Fragment() {
                 somme_totale_depenses += it.somme
             }
         }
-        depenses_totales.setText(somme_totale_depenses.toString())
+        depenses_totales.setText(BigDecimal(somme_totale_depenses).setScale(2, RoundingMode.HALF_EVEN).toString())
 
         // Calcule les revenus moins les dépenses et affiche l'argent disponible.
-        val somme_restante = somme_totale_revenus - somme_totale_depenses
-        argent_disponible.setText(somme_restante.toString())
+        var somme_restante = somme_totale_revenus - somme_totale_depenses
+        argent_disponible.setText(BigDecimal(somme_restante).setScale(2, RoundingMode.HALF_EVEN).toString())
     }
 
     override fun onCreateView(
