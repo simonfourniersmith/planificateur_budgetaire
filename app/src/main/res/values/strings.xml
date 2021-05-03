@@ -14,20 +14,6 @@
     <string name="depenses">Dépenses</string>
     <string name="argent_disponible">Argent disponible</string>
     <string name="budgetly">Budgetly</string>
-    <string-array name="liste_categories_revenus">
-        <item>Salaire</item>
-        <item>Bourse</item>
-        <item>Prime</item>
-        <item>Cadeau</item>
-    </string-array>
-    <string-array name="liste_categories_depenses">
-        <item>Essence</item>
-        <item>Épicerie</item>
-        <item>Restaurant</item>
-        <item>Médicaments</item>
-        <item>Cinéma</item>
-        <item>Assurance auto</item>
-    </string-array>
     <string-array name="liste_frequences">
         <item>Hebdomadaire</item>
         <item>Bimensuel</item>
