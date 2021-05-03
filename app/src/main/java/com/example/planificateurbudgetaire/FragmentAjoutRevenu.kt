@@ -1,13 +1,11 @@
 package com.example.planificateurbudgetaire
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.planificateurbudgetaire.model.Revenu
 import kotlinx.android.synthetic.main.fragment_ajout_revenu.view.*
 
@@ -43,14 +41,14 @@ class FragmentAjoutRevenu : Fragment() {
 
         // Lorsque le bouton 'ajouter' est appuyé, les renseignements sur le revenu sont envoyés dans MainActivity et on retourne à l'écran d'accueil.
         view.bouton_ajouter.setOnClickListener {
-            val categorie = view.spinner_categorie.selectedItem.toString()
+            val categorie = view.input_categorie_revenu.text.toString()
             val frequence = view.spinner_frequence.selectedItem.toString()
-            var somme = view.input_somme.text.toString().toFloat()
-            /*if (somme.isEmpty() == true) {
+            var somme = view.input_somme.text.toString()
+            if (somme.isEmpty()) {
                 somme = "0"
             }
-            somme = somme.toFloat()*/
-            val revenu = Revenu(categorie, frequence, somme)
+            var somme_float = somme.toFloat()
+            val revenu = Revenu(categorie, frequence, somme_float)
 
             (activity as MainActivity?)!!.addRevenu(revenu)
 

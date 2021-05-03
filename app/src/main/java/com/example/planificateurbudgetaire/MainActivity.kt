@@ -1,5 +1,6 @@
 package com.example.planificateurbudgetaire
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,9 @@ import com.google.android.material.textfield.TextInputLayout
 import java.io.Console
 import kotlin.math.log
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,10 +26,18 @@ class MainActivity : AppCompatActivity() {
 
     public fun addRevenu(revenu: Revenu) {
         liste_revenus.add(revenu)
+        var json_liste_revenus = Json.encodeToString(liste_revenus)
+        openFileOutput("sauvegarde_revenus", Context.MODE_PRIVATE).use {
+            it.write(json_liste_revenus.toByteArray())
+        }
     }
 
     public fun addDepense(depense: Depense) {
         liste_depenses.add(depense)
+        var json_liste_depenses = Json.encodeToString(liste_depenses)
+        openFileOutput("sauvegarde_depenses", Context.MODE_PRIVATE).use {
+            it.write(json_liste_depenses.toByteArray())
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -30,16 +30,21 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:padding="10dp"
-                android:textSize="25sp"
-                android:text="@string/categorie" />
+                android:text="@string/categorie"
+                android:textSize="25sp" />
 
-            <Spinner
-                android:id="@+id/spinner_categorie"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:padding="10dp"
-                android:entries="@array/liste_categories_depenses" />
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_categorie_depense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </TableRow>
 

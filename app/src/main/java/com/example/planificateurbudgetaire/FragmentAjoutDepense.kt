@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.planificateurbudgetaire.model.Depense
 import kotlinx.android.synthetic.main.fragment_ajout_depense.view.*
 
@@ -42,10 +41,14 @@ class FragmentAjoutDepense : Fragment() {
 
         // Lorsque le bouton 'ajouter' est appuyé, les renseignements sur la dépense sont envoyés dans MainActivity et on retourne à l'écran d'accueil.
         view.bouton_ajouter.setOnClickListener {
-            val categorie = view.spinner_categorie.selectedItem.toString()
+            val categorie = view.input_categorie_depense.text.toString()
             val frequence = view.spinner_frequence.selectedItem.toString()
-            val somme = view.input_somme.text.toString().toFloat()
-            val depense = Depense(categorie, frequence, somme)
+            var somme = view.input_somme.text.toString()
+            if (somme.isEmpty()) {
+                somme = "0"
+            }
+            var somme_float = somme.toFloat()
+            val depense = Depense(categorie, frequence, somme_float)
 
             (activity as MainActivity?)!!.addDepense(depense)
 
