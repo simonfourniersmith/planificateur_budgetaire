@@ -1,6 +1,7 @@
 package com.example.planificateurbudgetaire
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,7 +45,11 @@ class FragmentAjoutRevenu : Fragment() {
         view.bouton_ajouter.setOnClickListener {
             val categorie = view.spinner_categorie.selectedItem.toString()
             val frequence = view.spinner_frequence.selectedItem.toString()
-            val somme = view.input_somme.text.toString().toFloat()
+            var somme = view.input_somme.text.toString().toFloat()
+            /*if (somme.isEmpty() == true) {
+                somme = "0"
+            }
+            somme = somme.toFloat()*/
             val revenu = Revenu(categorie, frequence, somme)
 
             (activity as MainActivity?)!!.addRevenu(revenu)

@@ -34,6 +34,6 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_main)
 
-
+        /* TODO Charger les fichiers de données lors de l'ouverture de l'application */
     }
 }
