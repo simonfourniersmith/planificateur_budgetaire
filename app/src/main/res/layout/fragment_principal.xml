@@ -12,7 +12,7 @@
         android:layout_width="365dp"
         android:layout_height="550dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="450dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,12 +51,6 @@
 
         </TableRow>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewRevenus"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:scrollbars="vertical"/>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -87,14 +81,6 @@
                 android:textSize="25sp" />
 
         </TableRow>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewDepenses"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:scrollbars="vertical"/>
-
-
 
         <TableRow
             android:layout_width="match_parent"
@@ -127,14 +113,12 @@
         </TableRow>
     </TableLayout>
 
-
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="450dp"
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
@@ -165,6 +149,33 @@
             android:backgroundTint="@color/Black"
             android:paddingHorizontal="16dp"
             android:text="@string/depense"
+            android:textColor="@color/White" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDeux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/bouton_reinitialisation"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/Black"
+            android:paddingHorizontal="16dp"
+            android:text="@string/reinitialisation"
             android:textColor="@color/White" />
     </LinearLayout>
 

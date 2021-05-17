@@ -1,15 +1,16 @@
 package com.example.planificateurbudgetaire
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
+import androidx.appcompat.app.AppCompatActivity
 import com.example.planificateurbudgetaire.model.Depense
 import com.example.planificateurbudgetaire.model.Revenu
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.FileNotFoundException
+import java.io.PrintWriter
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
         openFileOutput(fichier_depenses, Context.MODE_PRIVATE).use {
             it.write(json_liste_depenses.toByteArray())
         }
+    }
+    
+    public fun supprimerFichiers() {
+        val pwd = PrintWriter("/data/data/com.example.planificateurbudgetaire/files/sauvegarde_depenses")
+        pwd.write("")
+        val pwr = PrintWriter("/data/data/com.example.planificateurbudgetaire/files/sauvegarde_revenus")
+        pwr.write("")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

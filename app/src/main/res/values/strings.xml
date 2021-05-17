@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="revenu">+ Revenu</string>
     <string name="depense">+ Dépense</string>
+    <string name="reinitialisation">Réinitialisation</string>
     <string name="annuler">Annuler</string>
     <string name="ajouter">Ajouter</string>
     <string name="categorie">Catégorie</string>

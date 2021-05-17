@@ -1,16 +1,18 @@
 package com.example.planificateurbudgetaire
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_principal.*
 import kotlinx.android.synthetic.main.fragment_principal.view.*
 import java.math.RoundingMode
 import java.math.BigDecimal
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,6 +74,29 @@ class FragmentPrincipal : Fragment() {
         // Calcule les revenus moins les dépenses et affiche l'argent disponible.
         var somme_restante = somme_totale_revenus - somme_totale_depenses
         argent_disponible.setText(BigDecimal(somme_restante).setScale(2, RoundingMode.HALF_EVEN).toString())
+
+        bouton_reinitialisation.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this.context)
+            dialogBuilder.setMessage("Voulez-vous supprimer toutes vos entrées? Cette action est irréversible.")
+                .setCancelable(false)
+                .setPositiveButton("Confirmer", DialogInterface.OnClickListener {
+                        dialog, id -> reinitialisation()
+                })
+                .setNegativeButton("Annuler", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+            val alert = dialogBuilder.create()
+            alert.setTitle("Réinitialisation")
+            alert.show()
+        }
+    }
+
+    private fun reinitialisation() {
+        (activity as MainActivity?)!!.liste_revenus.clear()
+        (activity as MainActivity?)!!.liste_depenses.clear()
+        revenus_totaux.setText("0.0")
+        depenses_totales.setText("0.0")
+        argent_disponible.setText("0.0")
     }
 
     override fun onCreateView(
@@ -83,6 +108,7 @@ class FragmentPrincipal : Fragment() {
 
         view.bouton_revenu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutRevenu) }
         view.bouton_depense.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutDepense) }
+
 
         return view
     }
