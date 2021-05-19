@@ -10,7 +10,6 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.FileNotFoundException
-import java.io.PrintWriter
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,11 +34,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
-    public fun supprimerFichiers() {
-        val pwd = PrintWriter("/data/data/com.example.planificateurbudgetaire/files/sauvegarde_depenses")
-        pwd.write("")
-        val pwr = PrintWriter("/data/data/com.example.planificateurbudgetaire/files/sauvegarde_revenus")
-        pwr.write("")
+    public fun emptyFiles() {
+        liste_revenus.clear()
+        var json_liste_revenus = Json.encodeToString(liste_revenus)
+        openFileOutput(fichier_revenus, Context.MODE_PRIVATE).use {
+            it.write(json_liste_revenus.toByteArray())
+        }
+        liste_depenses.clear()
+        var json_liste_depenses = Json.encodeToString(liste_depenses)
+        openFileOutput(fichier_depenses, Context.MODE_PRIVATE).use {
+            it.write(json_liste_depenses.toByteArray())
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

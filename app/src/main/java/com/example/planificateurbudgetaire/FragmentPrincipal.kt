@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.fragment_principal.view.*
 import java.math.RoundingMode
 import java.math.BigDecimal
 
-
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -92,11 +91,10 @@ class FragmentPrincipal : Fragment() {
     }
 
     private fun reinitialisation() {
-        (activity as MainActivity?)!!.liste_revenus.clear()
-        (activity as MainActivity?)!!.liste_depenses.clear()
         revenus_totaux.setText("0.0")
         depenses_totales.setText("0.0")
         argent_disponible.setText("0.0")
+        (activity as MainActivity?)!!.emptyFiles()
     }
 
     override fun onCreateView(
