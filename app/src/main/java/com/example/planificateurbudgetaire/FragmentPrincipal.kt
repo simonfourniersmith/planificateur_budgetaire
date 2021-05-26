@@ -107,7 +107,6 @@ class FragmentPrincipal : Fragment() {
         view.bouton_revenu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutRevenu) }
         view.bouton_depense.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutDepense) }
 
-
         return view
     }
 
