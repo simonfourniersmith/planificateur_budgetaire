@@ -57,6 +57,7 @@ class FragmentAjoutDepense : Fragment() {
 
         // Retour à l'écran d'accueil.
         view.bouton_annuler.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentPrincipal) }
+
         return view
     }
 
