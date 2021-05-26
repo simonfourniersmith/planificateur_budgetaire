@@ -77,13 +77,13 @@ class FragmentPrincipal : Fragment() {
         bouton_reinitialisation.setOnClickListener {
             val dialogBuilder = AlertDialog.Builder(this.context)
             dialogBuilder.setMessage("Voulez-vous supprimer toutes vos entrées? Cette action est irréversible.")
-                .setCancelable(false)
-                .setPositiveButton("Confirmer", DialogInterface.OnClickListener {
+                    .setCancelable(false)
+                    .setPositiveButton("Confirmer", DialogInterface.OnClickListener {
                         dialog, id -> reinitialisation()
-                })
-                .setNegativeButton("Annuler", DialogInterface.OnClickListener {
+                    })
+                    .setNegativeButton("Annuler", DialogInterface.OnClickListener {
                         dialog, id -> dialog.cancel()
-                })
+                    })
             val alert = dialogBuilder.create()
             alert.setTitle("Réinitialisation")
             alert.show()
@@ -98,14 +98,15 @@ class FragmentPrincipal : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_principal, container, false)
 
         view.bouton_revenu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutRevenu) }
         view.bouton_depense.setOnClickListener { Navigation.findNavController(view).navigate(R.id.navigateToFragmentAjoutDepense) }
+
 
         return view
     }
@@ -122,11 +123,11 @@ class FragmentPrincipal : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmentPrincipal().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                FragmentPrincipal().apply {
+                    arguments = Bundle().apply {
+                        putString(ARG_PARAM1, param1)
+                        putString(ARG_PARAM2, param2)
+                    }
                 }
-            }
     }
 }

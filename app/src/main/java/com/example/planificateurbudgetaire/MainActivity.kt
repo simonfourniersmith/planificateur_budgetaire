@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             it.write(json_liste_depenses.toByteArray())
         }
     }
-    
+
     public fun emptyFiles() {
         liste_revenus.clear()
         var json_liste_revenus = Json.encodeToString(liste_revenus)

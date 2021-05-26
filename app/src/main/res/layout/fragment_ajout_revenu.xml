@@ -8,21 +8,24 @@
 
 
     <TableLayout
-        android:layout_width="375dp"
+        android:id="@+id/tableLayout2"
+        android:layout_width="365dp"
         android:layout_height="300dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="450dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="40dp" >
+            android:layout_marginBottom="40dp">
 
             <TextView
                 android:id="@+id/label_categorie"
@@ -43,8 +46,9 @@
                     android:id="@+id/input_categorie_revenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:inputType="textCapWords" />
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapWords"
+                    android:padding="10dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </TableRow>
@@ -52,7 +56,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="40dp" >
+            android:layout_marginBottom="40dp">
 
             <TextView
                 android:id="@+id/label_frequence"
@@ -60,23 +64,23 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:padding="10dp"
-                android:textSize="25sp"
-                android:text="@string/frequence" />
+                android:text="@string/frequence"
+                android:textSize="25sp" />
 
             <Spinner
                 android:id="@+id/spinner_frequence"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:padding="10dp"
-                android:entries="@array/liste_frequences" />
+                android:entries="@array/liste_frequences"
+                android:padding="10dp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="40dp" >
+            android:layout_marginBottom="40dp">
 
             <TextView
                 android:id="@+id/label_somme"
@@ -84,8 +88,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:padding="10dp"
-                android:textSize="25sp"
-                android:text="@string/somme" />
+                android:text="@string/somme"
+                android:textSize="25sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -97,6 +101,7 @@
                     android:id="@+id/input_somme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:inputType="numberDecimal"
                     android:padding="10dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:padding="10dp"
-                android:textSize="25sp"
-                android:text="@string/dollar_sign" />
+                android:text="@string/dollar_sign"
+                android:textSize="25sp" />
         </TableRow>
     </TableLayout>
 
@@ -116,9 +121,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="450dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,10 +137,10 @@
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:paddingHorizontal="16dp"
             android:backgroundTint="@color/Black"
-            android:textColor="@color/White"
-            android:text="@string/annuler" />
+            android:paddingHorizontal="16dp"
+            android:text="@string/annuler"
+            android:textColor="@color/White" />
 
         <Button
             android:id="@+id/bouton_ajouter"
@@ -149,4 +154,5 @@
             android:text="@string/ajouter"
             android:textColor="@color/White" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
